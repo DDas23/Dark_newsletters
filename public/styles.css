@@ -1,0 +1,27 @@
+html,
+body {
+  height: 100%;
+  
+}
+
+.form-signin {
+  max-width: 350px;
+  padding: 2rem;
+  
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 1;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: 4px;
+  border-bottom-right-radius: 2;
+  border-bottom-left-radius: 2;
+}
+
+.form-signin input[type="text"] {
+  margin-bottom: 4px;
+  border-top-left-radius: 2;
+  border-top-right-radius: 2;
+}
