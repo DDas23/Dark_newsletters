@@ -5,7 +5,6 @@ const request = require("request");
 const https = require("https");
 require('dotenv').config();
 
-console.log(process.env.api_identity);
 const app = express();
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -38,7 +37,7 @@ app.post("/", function(req, res){
     const url = "https://us9.api.mailchimp.com/3.0/lists/"+api_id;
     const options = {
         method:"POST",
-        auth: "Deep1:"+api_k,
+        auth: "Deep1:"+api_k, //check both the integration
     }
 
     const request = https.request(url, options, function(response)
@@ -68,9 +67,3 @@ app.post("/failure", function(req, res) {
 app.listen(process.env.PORT || 3000, function() { //dynamic port with local as well
     console.log("server is running");
 });
-
-//API key
-//2e5f384c152714d74ef0e7f0f0e86229-us9
-
-//Audience id
-//c63954ac67
