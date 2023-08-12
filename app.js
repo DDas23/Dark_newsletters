@@ -49,7 +49,7 @@ app.post("/", function(req, res){
         console.log(JSON.parse(data));
        })
     })
-    //request.write(jsonData);
+    request.write(jsonData);
     request.end();
 
     console.log(Firstname, Lastname, email);
@@ -60,7 +60,7 @@ app.post("/failure", function(req, res) {
 }
 );
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() { //dynamic port with local as well
     console.log("server is running");
 });
 
